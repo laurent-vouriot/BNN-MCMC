@@ -6,9 +6,11 @@ Bayesian statistics is a paradigm centered on the Bayesian interpretation of pro
 
 Recall Bayes' rule:
 
-$
-P(H | D) = \frac{P(D | H) P(H)}{P(D)}
-$
+```math
+\begin{align*}
+  P(H | D) = \frac{P(D | H) P(H)}{P(D)}
+\end{align*}
+```
 
 - $H$ is a proposition or hypothesis.
 - $D$ is the evidence, which in this context refers to our data.
