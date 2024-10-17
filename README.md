@@ -79,9 +79,9 @@ Here is what happens inside the algorithm :
 1. First, we take a random guess $\theta_0$. 
 2. We sample a proposal $\theta'$, from the proposal distribution $Q(\theta' | \theta_n)$.
 3. We check if the proposal is more likely than the previous $\theta$ according to target distribution represented by $f(\theta)$, using  $min(1, \frac{ Q(\theta' | \theta_n)}   {Q(\theta_n | \theta')}   \frac{f(\theta')}{f(\theta_n)})$.
-    4. If more likely we accept,
-    9. If less likely it is accepted according to a certain probability,
-    10. rejected o.w.
+  * If more likely we accept,
+  * If less likely it is accepted according to a certain probability,
+  * Rejected o.w.
 
 In practice:
 1. the first random guess can be the model's initial random parameters. 
@@ -166,9 +166,12 @@ $log(2\pi)$ is a constant, it will have no impact in the acceptance probability,
 **Likelihood function for a regression task**
 
 In the case of a regression task, we assume that the data likelihood follows a Gaussian distribution. Specifically, we assume the outputs $y$ are normally distributed around the model's predictions $f(x, \theta)$. The likelihood function is given by:
-$
-    p(y | x, \theta) = \mathcal{N}(f(x, \theta), \sigma^2).
-$
+```math
+\begin{align*}
+    p(y | x, \theta) &= \mathcal{N}(f(x, \theta), \sigma^2).
+\end{align*}
+```
+
 Hence the log likelihood is computed as follows : 
 
 ```math
