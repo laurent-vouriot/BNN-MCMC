@@ -165,10 +165,10 @@ $log(2\pi)$ is a constant, it will have no impact in the acceptance probability,
 
 **Likelihood function for a regression task**
 
-In the case of a regression task, we assume that the data likelihood follows a Gaussian distribution. Specifically, we assume the outputs $y$ are normally distributed around the model's predictions $f(x, \theta)$. The likelihood function is given by:
+In the case of a regression task, we assume that the data likelihood follows a Gaussian distribution. Specifically, we assume the outputs $y$ are normally distributed around the model's predictions $f_{\theta}(x)$. The likelihood function is given by:
 ```math
 \begin{align*}
-    p(y | x, \theta) &= \mathcal{N}(f(x, \theta), \sigma^2).
+    p(y | x, \theta) &= \mathcal{N}(f_{\theta}(x), \sigma^2).
 \end{align*}
 ```
 
@@ -176,8 +176,8 @@ Hence the log likelihood is computed as follows :
 
 ```math
 \begin{align*}
-    p(x,y | \theta) & = \frac{1}{\sqrt{(2\pi\sigma^2)}}exp\left(-\frac{(x - f(x, \theta))^2)}{2\sigma^2}\right) \\
-                    & = -\frac{1}{2}(x - f(x, \theta))^2
+    p(x,y | \theta) & = \frac{1}{\sqrt{(2\pi\sigma^2)}}exp\left(-\frac{(x - f_{\theta}(x))^2)}{2\sigma^2}\right) \\
+                    & = -\frac{1}{2}(x - f_\theta(x))^2
 \end{align*}
 ```
 
@@ -334,7 +334,7 @@ For a binary classification task, the log likelihood function differs because we
 
 ```math
 \begin{align*}
-    p(x, y | \theta) = f(x, \theta)^y (1 - f(x,  \theta))^{(1 - y)}
+    p(x, y | \theta) = f_{\theta}(x)^y (1 - f_{\theta(x))^{(1 - y)}
 \end{align*}
 ```
 
@@ -342,9 +342,9 @@ The log likelihood becomes:
 
 ```math
 \begin{align*}
-   log(p(x, y | \theta)) &= log(f(x, \theta)^y (1 - f(x,  \theta))^{(1 - y)}) \\
-                         &= y\;log(f(x, \theta)) +  (1 - y)log(1 - f(x,  \theta)) \\ 
-                         &= y\;log(f(x, \theta)) +  (1 - y)log(1 - f(x,  \theta)) \\ 
+   log(p(x, y | \theta)) &= log(f_{\theta}(x)^y (1 - f_{\theta}(x))^{(1 - y)}) \\
+                         &= y\;log(f_{\theta}(x)) +  (1 - y)log(1 - f_{\theta}(x)) \\ 
+                         &= y\;log(f_{\theta}(x)) +  (1 - y)log(1 - f_{\theta}(x)) \\ 
 \end{align*}
 ```
 
