@@ -334,7 +334,7 @@ For a binary classification task, the log likelihood function differs because we
 
 ```math
 \begin{align*}
-    p(x, y | \theta) = f_{\theta}(x)^y (1 - f_{\theta(x))^{(1 - y)}
+    p(x, y | \theta) = f_{\theta}(x)^y (1 - f_{\theta}(x))^{(1 - y)}
 \end{align*}
 ```
 
